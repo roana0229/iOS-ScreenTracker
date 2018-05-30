@@ -1,16 +1,16 @@
 //
-//  ViewController.swift
+//  DetailViewController.swift
 //  iOS-ScreenTracker
 //
-//  Created by Kaoru Tsutsumishita on 2018/05/08.
+//  Created by Kaoru Tsutsumishita on 2018/05/15.
 //  Copyright © 2018年 roana0229. All rights reserved.
 //
 
 import UIKit
 
-class ViewController: UIViewController, TrackingMarker {
+class DetailViewController: UIViewController, TrackingMarker {
 
-    var screenName: String = "リスト"
+    var screenName: String = "詳細"
     var screenParameter: [String : Any] = [:]
 
     deinit {
@@ -46,4 +46,8 @@ class ViewController: UIViewController, TrackingMarker {
         super.didReceiveMemoryWarning()
     }
 
+
+    @IBAction func actionBack(_ sender: Any) {
+        dismiss(animated: true, completion: nil)
+    }
 }
