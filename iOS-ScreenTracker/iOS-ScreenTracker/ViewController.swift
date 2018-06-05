@@ -46,4 +46,15 @@ class ViewController: UIViewController, TrackingMarker {
         super.didReceiveMemoryWarning()
     }
 
+    @IBAction func actionTapBtn(_ sender: Any) {
+        let alert = UIAlertController.init(title: "test", message: nil, preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "close", style: .default, handler: { (_) in
+            TrackingLogger.sendEvent(.tap, widget: .alert, contentID: .topTestAlert, contentType: .button, content: .close)
+            alert.dismiss(animated: true, completion: nil)
+        }))
+        present(alert, animated: true, completion: {
+            TrackingLogger.sendEvent(.display, widget: .alert, contentID: .topTestAlert)
+        })
+    }
+
 }
