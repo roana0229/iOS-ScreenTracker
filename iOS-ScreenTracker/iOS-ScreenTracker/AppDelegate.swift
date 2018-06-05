@@ -13,13 +13,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
 
-
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
         ScreenTracker.initialize(trackStarted: { trackingMarker in
-            Logger.log("====================================> screenName: \(trackingMarker.screenName), parameter: \(trackingMarker.screenParameter)")
+            TrackingLogger.track(trackingMarker)
         }, trackEnded: { trackingMarker, exposureTime in
-            Logger.log("<==================================== screenName: \(trackingMarker.screenName), parameter: \(trackingMarker.screenParameter), exposureTime: \(exposureTime)")
+            TrackingLogger.sendExposureEvent(trackingMarker, exposureTime: exposureTime)
         })
         return true
     }

@@ -14,24 +14,25 @@ protocol TrackingMarker {
 }
 
 class ScreenTracker {
-    static var instance: ScreenTracker?
+    fileprivate static var instance: ScreenTracker?
 
-    let trackStartedObserver: (TrackingMarker) -> ()
-    let trackEndedObserver: (TrackingMarker, Int) -> ()
+    fileprivate let trackStartedObserver: (TrackingMarker) -> ()
+    fileprivate let trackEndedObserver: (TrackingMarker, Int) -> ()
 
     static func initialize(trackStarted: @escaping (TrackingMarker) -> (), trackEnded: @escaping (TrackingMarker, Int) -> ()) {
         ScreenTracker.instance = ScreenTracker(trackStarted, trackEnded)
         adaptViewController()
     }
 
-    private static func adaptViewController() {
-        UIViewController.adaptHookMethod(originalSelector: #selector(UIViewController.viewDidLoad), hookSelector: #selector(UIViewController.hookViewDidLoad))
-    }
-
     private init(_ trackStarted: @escaping (TrackingMarker) -> (), _ trackEnded: @escaping (TrackingMarker, Int) -> ()) {
         trackStartedObserver = trackStarted
         trackEndedObserver = trackEnded
     }
+
+    private static func adaptViewController() {
+        UIViewController.adaptHookMethod(originalSelector: #selector(UIViewController.viewDidLoad), hookSelector: #selector(UIViewController.hookViewDidLoad))
+    }
+
 }
 
 extension UIViewController {
@@ -50,7 +51,7 @@ extension UIViewController {
     }
 
     @objc func hookViewDidLoad() {
-        hookViewDidLoad()
+        hookViewDidLoad() // call original ViewController.viewDidLoad()
 
         if self is LifecycleNotifyViewController {
             return
