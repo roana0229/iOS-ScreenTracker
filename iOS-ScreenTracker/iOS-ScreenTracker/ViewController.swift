@@ -10,8 +10,13 @@ import UIKit
 
 class ViewController: UIViewController, TrackingMarker {
 
-    var screenName: String = "リスト"
-    var screenParameter: [String : Any] = [:]
+    func screenName() -> String {
+        return "リスト"
+    }
+
+    func screenParameter() -> [String : Any] {
+        return [:]
+    }
 
     deinit {
         Logger.log()

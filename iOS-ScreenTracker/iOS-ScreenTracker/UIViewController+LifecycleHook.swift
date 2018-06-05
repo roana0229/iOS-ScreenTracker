@@ -9,8 +9,8 @@
 import UIKit
 
 protocol TrackingMarker {
-    var screenName: String { get }
-    var screenParameter: [String: Any] { get }
+    func screenName() -> String
+    func screenParameter() -> [String: Any]
 }
 
 class ScreenTracker {

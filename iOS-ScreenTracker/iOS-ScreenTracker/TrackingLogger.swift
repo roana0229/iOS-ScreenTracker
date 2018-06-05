@@ -30,11 +30,11 @@ struct TrackingLogger {
     }
 
     static func track(_ trackingMarker: TrackingMarker) {
-        Logger.log("====================================> screenName: \(trackingMarker.screenName), parameter: \(trackingMarker.screenParameter)")
+        Logger.log("====================================> screenName: \(trackingMarker.screenName()), parameter: \(trackingMarker.screenParameter())")
     }
 
     static func sendExposureEvent(_ trackingMarker: TrackingMarker, exposureTime: Int = 0) {
-        Logger.log("<==================================== screenName: \(trackingMarker.screenName), parameter: \(trackingMarker.screenParameter), exposureTime: \(exposureTime)")
+        Logger.log("<==================================== screenName: \(trackingMarker.screenName()), parameter: \(trackingMarker.screenParameter()), exposureTime: \(exposureTime)")
     }
 
     static func sendEvent(_ event: Event, widget: Widget, contentID: ContentID? = nil, contentType: ContentType? = nil, content: Content? = nil, position: Int? = nil) {

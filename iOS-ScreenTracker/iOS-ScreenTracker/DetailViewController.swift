@@ -10,8 +10,13 @@ import UIKit
 
 class DetailViewController: UIViewController, TrackingMarker {
 
-    var screenName: String = "詳細"
-    var screenParameter: [String : Any] = [:]
+    func screenName() -> String {
+        return "詳細"
+    }
+
+    func screenParameter() -> [String : Any] {
+        return [:]
+    }
 
     deinit {
         Logger.log()
