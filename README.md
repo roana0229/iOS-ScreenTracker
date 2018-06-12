@@ -79,4 +79,4 @@ If you are tracking everything, you should write `TrackingMarker` in `BaseViewCo
 
 see `LICENSE` file.
 
-Copyright (c) 2018 roana0229 <roana.enter@gmail.com>
+Copyright (c) 2018 Kaoru Tsutsumishita <roana.enter@gmail.com>
