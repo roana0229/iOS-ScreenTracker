@@ -13,7 +13,7 @@ protocol TrackingMarker {
     func screenParameter() -> [String: Any]
 }
 
-class ScreenTracker {
+open class ScreenTracker {
     fileprivate static var instance: ScreenTracker?
 
     fileprivate let trackStartedObserver: (TrackingMarker) -> ()
