@@ -14,9 +14,9 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "D276E4DE20CFB20C00E26FD8"
-               BuildableName = "iOS_ScreenTrackerLibrary.framework"
-               BlueprintName = "iOS-ScreenTrackerLibrary"
+               BlueprintIdentifier = "D276E50520CFB5F200E26FD8"
+               BuildableName = "ScreenTracker.framework"
+               BlueprintName = "ScreenTracker"
                ReferencedContainer = "container:iOS-ScreenTracker.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
@@ -45,9 +45,9 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "D276E4DE20CFB20C00E26FD8"
-            BuildableName = "iOS_ScreenTrackerLibrary.framework"
-            BlueprintName = "iOS-ScreenTrackerLibrary"
+            BlueprintIdentifier = "D276E50520CFB5F200E26FD8"
+            BuildableName = "ScreenTracker.framework"
+            BlueprintName = "ScreenTracker"
             ReferencedContainer = "container:iOS-ScreenTracker.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
@@ -63,9 +63,9 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "D276E4DE20CFB20C00E26FD8"
-            BuildableName = "iOS_ScreenTrackerLibrary.framework"
-            BlueprintName = "iOS-ScreenTrackerLibrary"
+            BlueprintIdentifier = "D276E50520CFB5F200E26FD8"
+            BuildableName = "ScreenTracker.framework"
+            BlueprintName = "ScreenTracker"
             ReferencedContainer = "container:iOS-ScreenTracker.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
