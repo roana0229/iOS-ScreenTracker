@@ -19,7 +19,7 @@ public class ScreenTracker {
     fileprivate let trackStartedObserver: (TrackingMarker) -> ()
     fileprivate let trackEndedObserver: (TrackingMarker, Int) -> ()
 
-    static func initialize(trackStarted: @escaping (TrackingMarker) -> (), trackEnded: @escaping (TrackingMarker, Int) -> ()) {
+    public static func initialize(trackStarted: @escaping (TrackingMarker) -> (), trackEnded: @escaping (TrackingMarker, Int) -> ()) {
         ScreenTracker.instance = ScreenTracker(trackStarted, trackEnded)
         adaptViewController()
     }
