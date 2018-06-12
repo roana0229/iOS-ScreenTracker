@@ -46,6 +46,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 #### 3. Implement Protocol `TrackingMarker`
 
 ```.swift
+import ScreenTracker
+
 class ViewController: UIViewController, TrackingMarker {
 
     func screenName() -> String {
