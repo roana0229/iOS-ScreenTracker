@@ -53,7 +53,7 @@ import ScreenTracker
 class ViewController: UIViewController, TrackingMarker {
 
     func screenName() -> String {
-        return "リスト"
+        return "Sample Screen"
     }
 
     func screenParameter() -> [String : Any] {
