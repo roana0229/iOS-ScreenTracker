@@ -8,12 +8,12 @@
 
 import UIKit
 
-protocol TrackingMarker {
+public protocol TrackingMarker {
     func screenName() -> String
     func screenParameter() -> [String: Any]
 }
 
-open class ScreenTracker {
+public class ScreenTracker {
     fileprivate static var instance: ScreenTracker?
 
     fileprivate let trackStartedObserver: (TrackingMarker) -> ()
@@ -50,7 +50,7 @@ extension UIViewController {
         }
     }
 
-    @objc func hookViewDidLoad() {
+    @objc fileprivate func hookViewDidLoad() {
         hookViewDidLoad() // call original ViewController.viewDidLoad()
 
         if self is LifecycleNotifyViewController {
@@ -65,7 +65,7 @@ extension UIViewController {
 
 }
 
-class LifecycleNotifyViewController: UIViewController {
+private class LifecycleNotifyViewController: UIViewController {
 
     private var startedTime: Date?
 
