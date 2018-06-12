@@ -14,9 +14,38 @@
 		D22940A520A184DD00FE354E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D22940A320A184DD00FE354E /* LaunchScreen.storyboard */; };
 		D22940AD20A1950D00FE354E /* UIViewController+LifecycleHook.swift in Sources */ = {isa = PBXBuildFile; fileRef = D22940AC20A1950D00FE354E /* UIViewController+LifecycleHook.swift */; };
 		D26B22D420C68EA700AD10D5 /* TrackingLogger.swift in Sources */ = {isa = PBXBuildFile; fileRef = D26B22D320C68EA700AD10D5 /* TrackingLogger.swift */; };
+		D276E4E320CFB20C00E26FD8 /* iOS_ScreenTrackerLibrary.h in Headers */ = {isa = PBXBuildFile; fileRef = D276E4E120CFB20C00E26FD8 /* iOS_ScreenTrackerLibrary.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		D276E4E620CFB20C00E26FD8 /* iOS_ScreenTrackerLibrary.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D276E4DF20CFB20C00E26FD8 /* iOS_ScreenTrackerLibrary.framework */; };
+		D276E4E720CFB20C00E26FD8 /* iOS_ScreenTrackerLibrary.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = D276E4DF20CFB20C00E26FD8 /* iOS_ScreenTrackerLibrary.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		D276E4EC20CFB22A00E26FD8 /* UIViewController+LifecycleHook.swift in Sources */ = {isa = PBXBuildFile; fileRef = D22940AC20A1950D00FE354E /* UIViewController+LifecycleHook.swift */; };
+		D276E4ED20CFB22E00E26FD8 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = D22940A620A184DD00FE354E /* Info.plist */; };
 		D2E8CBB720AAE54600531E2B /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2E8CBB620AAE54600531E2B /* DetailViewController.swift */; };
 		D2E8CBB920AAE5FB00531E2B /* Logger.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2E8CBB820AAE5FB00531E2B /* Logger.swift */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		D276E4E420CFB20C00E26FD8 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D229408F20A184DD00FE354E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = D276E4DE20CFB20C00E26FD8;
+			remoteInfo = "iOS-ScreenTrackerLibrary";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		D276E4EB20CFB20C00E26FD8 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				D276E4E720CFB20C00E26FD8 /* iOS_ScreenTrackerLibrary.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		D229409720A184DD00FE354E /* iOS-ScreenTracker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "iOS-ScreenTracker.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -28,12 +57,23 @@
 		D22940A620A184DD00FE354E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D22940AC20A1950D00FE354E /* UIViewController+LifecycleHook.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+LifecycleHook.swift"; sourceTree = "<group>"; };
 		D26B22D320C68EA700AD10D5 /* TrackingLogger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrackingLogger.swift; sourceTree = "<group>"; };
+		D276E4DF20CFB20C00E26FD8 /* iOS_ScreenTrackerLibrary.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = iOS_ScreenTrackerLibrary.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		D276E4E120CFB20C00E26FD8 /* iOS_ScreenTrackerLibrary.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = iOS_ScreenTrackerLibrary.h; sourceTree = "<group>"; };
+		D276E4E220CFB20C00E26FD8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D2E8CBB620AAE54600531E2B /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		D2E8CBB820AAE5FB00531E2B /* Logger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Logger.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
 		D229409420A184DD00FE354E /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D276E4E620CFB20C00E26FD8 /* iOS_ScreenTrackerLibrary.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D276E4DB20CFB20C00E26FD8 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -47,6 +87,7 @@
 			isa = PBXGroup;
 			children = (
 				D229409920A184DD00FE354E /* iOS-ScreenTracker */,
+				D276E4E020CFB20C00E26FD8 /* iOS-ScreenTrackerLibrary */,
 				D229409820A184DD00FE354E /* Products */,
 			);
 			sourceTree = "<group>";
@@ -55,6 +96,7 @@
 			isa = PBXGroup;
 			children = (
 				D229409720A184DD00FE354E /* iOS-ScreenTracker.app */,
+				D276E4DF20CFB20C00E26FD8 /* iOS_ScreenTrackerLibrary.framework */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -76,7 +118,27 @@
 			path = "iOS-ScreenTracker";
 			sourceTree = "<group>";
 		};
+		D276E4E020CFB20C00E26FD8 /* iOS-ScreenTrackerLibrary */ = {
+			isa = PBXGroup;
+			children = (
+				D276E4E120CFB20C00E26FD8 /* iOS_ScreenTrackerLibrary.h */,
+				D276E4E220CFB20C00E26FD8 /* Info.plist */,
+			);
+			path = "iOS-ScreenTrackerLibrary";
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		D276E4DC20CFB20C00E26FD8 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D276E4E320CFB20C00E26FD8 /* iOS_ScreenTrackerLibrary.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
 		D229409620A184DD00FE354E /* iOS-ScreenTracker */ = {
@@ -86,15 +148,35 @@
 				D229409320A184DD00FE354E /* Sources */,
 				D229409420A184DD00FE354E /* Frameworks */,
 				D229409520A184DD00FE354E /* Resources */,
+				D276E4EB20CFB20C00E26FD8 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				D276E4E520CFB20C00E26FD8 /* PBXTargetDependency */,
 			);
 			name = "iOS-ScreenTracker";
 			productName = "iOS-ScreenTracker";
 			productReference = D229409720A184DD00FE354E /* iOS-ScreenTracker.app */;
 			productType = "com.apple.product-type.application";
+		};
+		D276E4DE20CFB20C00E26FD8 /* iOS-ScreenTrackerLibrary */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = D276E4EA20CFB20C00E26FD8 /* Build configuration list for PBXNativeTarget "iOS-ScreenTrackerLibrary" */;
+			buildPhases = (
+				D276E4DA20CFB20C00E26FD8 /* Sources */,
+				D276E4DB20CFB20C00E26FD8 /* Frameworks */,
+				D276E4DC20CFB20C00E26FD8 /* Headers */,
+				D276E4DD20CFB20C00E26FD8 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "iOS-ScreenTrackerLibrary";
+			productName = "iOS-ScreenTrackerLibrary";
+			productReference = D276E4DF20CFB20C00E26FD8 /* iOS_ScreenTrackerLibrary.framework */;
+			productType = "com.apple.product-type.framework";
 		};
 /* End PBXNativeTarget section */
 
@@ -108,6 +190,10 @@
 				TargetAttributes = {
 					D229409620A184DD00FE354E = {
 						CreatedOnToolsVersion = 9.2;
+						ProvisioningStyle = Automatic;
+					};
+					D276E4DE20CFB20C00E26FD8 = {
+						CreatedOnToolsVersion = 9.3;
 						ProvisioningStyle = Automatic;
 					};
 				};
@@ -126,6 +212,7 @@
 			projectRoot = "";
 			targets = (
 				D229409620A184DD00FE354E /* iOS-ScreenTracker */,
+				D276E4DE20CFB20C00E26FD8 /* iOS-ScreenTrackerLibrary */,
 			);
 		};
 /* End PBXProject section */
@@ -138,6 +225,14 @@
 				D22940A520A184DD00FE354E /* LaunchScreen.storyboard in Resources */,
 				D22940A220A184DD00FE354E /* Assets.xcassets in Resources */,
 				D22940A020A184DD00FE354E /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D276E4DD20CFB20C00E26FD8 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D276E4ED20CFB22E00E26FD8 /* Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -157,7 +252,23 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		D276E4DA20CFB20C00E26FD8 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D276E4EC20CFB22A00E26FD8 /* UIViewController+LifecycleHook.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		D276E4E520CFB20C00E26FD8 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = D276E4DE20CFB20C00E26FD8 /* iOS-ScreenTrackerLibrary */;
+			targetProxy = D276E4E420CFB20C00E26FD8 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		D229409E20A184DD00FE354E /* Main.storyboard */ = {
@@ -289,6 +400,7 @@
 		D22940AA20A184DD00FE354E /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = DP5ZSR4FZH;
@@ -305,6 +417,7 @@
 		D22940AB20A184DD00FE354E /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = DP5ZSR4FZH;
@@ -315,6 +428,62 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Release;
+		};
+		D276E4E820CFB20C00E26FD8 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CODE_SIGN_IDENTITY = "";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = DP5ZSR4FZH;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "iOS-ScreenTrackerLibrary/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 11.3;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.roana0229.app.iOS-ScreenTracker.iOS-ScreenTrackerLibrary";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		D276E4E920CFB20C00E26FD8 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CODE_SIGN_IDENTITY = "";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = DP5ZSR4FZH;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "iOS-ScreenTrackerLibrary/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 11.3;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.roana0229.app.iOS-ScreenTracker.iOS-ScreenTrackerLibrary";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
 			};
 			name = Release;
 		};
@@ -335,6 +504,15 @@
 			buildConfigurations = (
 				D22940AA20A184DD00FE354E /* Debug */,
 				D22940AB20A184DD00FE354E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		D276E4EA20CFB20C00E26FD8 /* Build configuration list for PBXNativeTarget "iOS-ScreenTrackerLibrary" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D276E4E820CFB20C00E26FD8 /* Debug */,
+				D276E4E920CFB20C00E26FD8 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
