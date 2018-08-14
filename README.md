@@ -4,6 +4,8 @@ The minimum library to track screen `UIViewController`.
 Hook screen `viewWillAppear`, `viewWillDisappear`.  
 If you use for Android, see [Android-ScreenTracker](https://github.com/roana0229/Android-ScreenTracker).
 
+![demo](https://raw.githubusercontent.com/roana0229/iOS-ScreenTracker/master/demo.gif)
+
 ## Usage
 
 #### 1. Import this library
