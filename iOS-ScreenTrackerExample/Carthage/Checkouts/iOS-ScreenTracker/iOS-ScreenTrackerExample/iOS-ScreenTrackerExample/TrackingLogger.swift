@@ -12,11 +12,11 @@ import ScreenTracker
 struct TrackingLogger {
 
     static func track(_ trackingMarker: TrackingMarker) {
-        print("show >>> screenName: \(trackingMarker.screenName()), parameter: \(trackingMarker.screenParameter())")
+        Logger.log("====================================> screenName: \(trackingMarker.screenName()), parameter: \(trackingMarker.screenParameter())")
     }
 
     static func sendExposureEvent(_ trackingMarker: TrackingMarker, exposureTime: Int = 0) {
-        print("hide <<< screenName: \(trackingMarker.screenName()), parameter: \(trackingMarker.screenParameter()), exposureTime: \(exposureTime)")
+        Logger.log("<==================================== screenName: \(trackingMarker.screenName()), parameter: \(trackingMarker.screenParameter()), exposureTime: \(exposureTime)")
     }
 
 }

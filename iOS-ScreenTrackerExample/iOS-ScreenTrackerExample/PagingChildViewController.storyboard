@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Y1V-q7-awQ">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Paging Child View Controller-->
+        <scene sceneID="ffn-im-1OC">
+            <objects>
+                <viewController id="Y1V-q7-awQ" customClass="PagingChildViewController" customModule="iOS_ScreenTrackerExample" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="6Tv-O8-ea1">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WWm-ml-YEQ">
+                                <rect key="frame" x="130.5" y="303.5" width="114" height="60"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="40"/>
+                                <state key="normal" title="Button">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="onTapNext:" destination="Y1V-q7-awQ" eventType="touchUpInside" id="ZDr-Ix-VaQ"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="0.49327188729999999" blue="0.47399842739999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="WWm-ml-YEQ" firstAttribute="centerY" secondItem="6Tv-O8-ea1" secondAttribute="centerY" id="nhU-fc-EWU"/>
+                            <constraint firstItem="WWm-ml-YEQ" firstAttribute="centerX" secondItem="6Tv-O8-ea1" secondAttribute="centerX" id="tcQ-hm-otD"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="eoA-Ik-eJv"/>
+                    </view>
+                    <connections>
+                        <outlet property="nextButton" destination="WWm-ml-YEQ" id="3ye-fB-zsz"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Mz4-2g-JTi" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-154" y="141"/>
+        </scene>
+    </scenes>
+</document>

@@ -11,23 +11,12 @@ import ScreenTracker
 
 class DetailViewController: UIViewController, TrackingMarker {
 
-    @IBOutlet private weak var titleLabel: UILabel!
-
-    var pageIndex: Int?
-    var nestCount: Int = 0
-
     func screenName() -> String {
-        return "detail"
+        return "詳細"
     }
 
     func screenParameter() -> [String : Any] {
-        var params: [String: Any] = [:]
-
-        if let index = pageIndex {
-            params["from_page_index"] = index
-        }
-        params["next_count"] = nestCount
-        return params
+        return [:]
     }
 
     deinit {
@@ -37,7 +26,6 @@ class DetailViewController: UIViewController, TrackingMarker {
     override func viewDidLoad() {
         super.viewDidLoad()
         Logger.log()
-        titleLabel.text = "Detail nestCount: \(nestCount)"
     }
 
     override func viewWillAppear(_ animated: Bool) {
@@ -64,14 +52,7 @@ class DetailViewController: UIViewController, TrackingMarker {
         super.didReceiveMemoryWarning()
     }
 
-    @IBAction func actionToNext(_ sender: Any) {
-        if let vc = storyboard?.instantiateViewController(withIdentifier: "DetailViewController") as? DetailViewController {
-            vc.pageIndex = pageIndex
-            vc.nestCount = nestCount + 1
-            present(vc, animated: true, completion: nil)
-        }
-    }
-    
+
     @IBAction func actionBack(_ sender: Any) {
         dismiss(animated: true, completion: nil)
     }

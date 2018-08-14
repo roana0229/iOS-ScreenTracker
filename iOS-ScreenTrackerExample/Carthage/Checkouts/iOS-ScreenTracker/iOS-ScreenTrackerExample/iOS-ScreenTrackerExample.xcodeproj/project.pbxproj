@@ -15,9 +15,7 @@
 		D276E4F120CFB35100E26FD8 /* TrackingLogger.swift in Sources */ = {isa = PBXBuildFile; fileRef = D276E4EE20CFB35100E26FD8 /* TrackingLogger.swift */; };
 		D276E4F220CFB35100E26FD8 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D276E4EF20CFB35100E26FD8 /* DetailViewController.swift */; };
 		D276E4F320CFB35100E26FD8 /* Logger.swift in Sources */ = {isa = PBXBuildFile; fileRef = D276E4F020CFB35100E26FD8 /* Logger.swift */; };
-		D2AFBA082122CF5D0054BA12 /* ScreenTracker.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D276E51620CFB86300E26FD8 /* ScreenTracker.framework */; };
-		D2BC5B13210722EF008A026B /* PagingChildViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2BC5B12210722EF008A026B /* PagingChildViewController.swift */; };
-		D2BC5B15210722FC008A026B /* PagingChildViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D2BC5B14210722FC008A026B /* PagingChildViewController.storyboard */; };
+		D276E51720CFB86300E26FD8 /* ScreenTracker.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D276E51620CFB86300E26FD8 /* ScreenTracker.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -33,8 +31,6 @@
 		D276E4F020CFB35100E26FD8 /* Logger.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Logger.swift; sourceTree = "<group>"; };
 		D276E4FF20CFB57700E26FD8 /* iOS_ScreenTrackerLibrary.framework.dSYM */ = {isa = PBXFileReference; lastKnownFileType = wrapper.dsym; name = iOS_ScreenTrackerLibrary.framework.dSYM; path = Carthage/Build/iOS/iOS_ScreenTrackerLibrary.framework.dSYM; sourceTree = "<group>"; };
 		D276E51620CFB86300E26FD8 /* ScreenTracker.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ScreenTracker.framework; path = Carthage/Build/iOS/ScreenTracker.framework; sourceTree = "<group>"; };
-		D2BC5B12210722EF008A026B /* PagingChildViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PagingChildViewController.swift; sourceTree = "<group>"; };
-		D2BC5B14210722FC008A026B /* PagingChildViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = PagingChildViewController.storyboard; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -42,7 +38,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D2AFBA082122CF5D0054BA12 /* ScreenTracker.framework in Frameworks */,
+				D276E51720CFB86300E26FD8 /* ScreenTracker.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -78,8 +74,6 @@
 				D276E4CF20CFB14600E26FD8 /* Assets.xcassets */,
 				D276E4D120CFB14600E26FD8 /* LaunchScreen.storyboard */,
 				D276E4D420CFB14600E26FD8 /* Info.plist */,
-				D2BC5B12210722EF008A026B /* PagingChildViewController.swift */,
-				D2BC5B14210722FC008A026B /* PagingChildViewController.storyboard */,
 			);
 			path = "iOS-ScreenTrackerExample";
 			sourceTree = "<group>";
@@ -152,7 +146,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D2BC5B15210722FC008A026B /* PagingChildViewController.storyboard in Resources */,
 				D276E4D320CFB14600E26FD8 /* LaunchScreen.storyboard in Resources */,
 				D276E4D020CFB14600E26FD8 /* Assets.xcassets in Resources */,
 				D276E4CE20CFB14500E26FD8 /* Main.storyboard in Resources */,
@@ -187,7 +180,6 @@
 				D276E4F320CFB35100E26FD8 /* Logger.swift in Sources */,
 				D276E4CB20CFB14500E26FD8 /* ViewController.swift in Sources */,
 				D276E4F120CFB35100E26FD8 /* TrackingLogger.swift in Sources */,
-				D2BC5B13210722EF008A026B /* PagingChildViewController.swift in Sources */,
 				D276E4C920CFB14500E26FD8 /* AppDelegate.swift in Sources */,
 				D276E4F220CFB35100E26FD8 /* DetailViewController.swift in Sources */,
 			);
@@ -340,7 +332,6 @@
 					"$(PROJECT_DIR)/Carthage/Build/iOS",
 				);
 				INFOPLIST_FILE = "iOS-ScreenTrackerExample/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -363,7 +354,6 @@
 					"$(PROJECT_DIR)/Carthage/Build/iOS",
 				);
 				INFOPLIST_FILE = "iOS-ScreenTrackerExample/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
