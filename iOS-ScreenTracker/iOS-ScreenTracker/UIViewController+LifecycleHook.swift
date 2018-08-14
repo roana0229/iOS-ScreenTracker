@@ -13,6 +13,13 @@ public protocol TrackingMarker {
     func screenParameter() -> [String: Any]
 }
 
+public protocol PagingChildTrackingMarker: TrackingMarker {
+}
+
+public protocol PagingParentTrackingMarker {
+}
+
+
 public class ScreenTracker {
     fileprivate static var instance: ScreenTracker?
 
@@ -51,23 +58,52 @@ extension UIViewController {
     }
 
     @objc fileprivate func hookViewDidLoad() {
-        hookViewDidLoad() // call original ViewController.viewDidLoad()
-
-        if self is LifecycleNotifyViewController {
-            return
+        func addChild(_ viewController: UIViewController) {
+            addChildViewController(viewController)
+            view.insertSubview(viewController.view, at: 0)
+            viewController.didMove(toParentViewController: self)
         }
 
-        let lifecycleNotify = LifecycleNotifyViewController()
-        addChildViewController(lifecycleNotify)
-        view.insertSubview(lifecycleNotify.view, at: 0)
-        lifecycleNotify.didMove(toParentViewController: self)
+        if self is PagingParentTrackingMarker {
+            addChild(PagingParentLifecycleNotifyViewController())
+        } else if self is TrackingMarker && !(self is PagingChildTrackingMarker) {
+            addChild(LifecycleNotifyViewController())
+        }
+
+        hookViewDidLoad() // call original ViewController.viewDidLoad()
+    }
+
+    public func setTabScrollViewForTracking(_ scrollView: UIScrollView) {
+        if let v = getTabParentLifecycleNotifyViewController(self) {
+            v.scrollView = scrollView
+        }
+    }
+
+    public func notifyTabChangedForTracking(index: Int) {
+        if let v = getTabParentLifecycleNotifyViewController(self) {
+            v.tabChenged(index: index)
+        }
+    }
+
+    private func getTabParentLifecycleNotifyViewController(_ viewController: UIViewController?) -> PagingParentLifecycleNotifyViewController? {
+        guard let vc = viewController, vc is PagingParentTrackingMarker else {
+            return nil
+        }
+
+        for child in vc.childViewControllers {
+            if let v = child as? PagingParentLifecycleNotifyViewController {
+                return v
+            }
+        }
+
+        return nil
     }
 
 }
 
-private class LifecycleNotifyViewController: UIViewController {
+private final class LifecycleNotifyViewController: UIViewController {
 
-    private var startedTime: Date?
+    private var startedTime: Date!
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -86,13 +122,71 @@ private class LifecycleNotifyViewController: UIViewController {
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
         if let trackingMarker = parent as? TrackingMarker {
-            if let started = startedTime {
-                let ms = round(Date().timeIntervalSince(started) * 1000)
-                ScreenTracker.instance?.trackEndedObserver(trackingMarker, Int(ms))
-            } else {
-                ScreenTracker.instance?.trackEndedObserver(trackingMarker, 0)
-            }
+            let ms = round(Date().timeIntervalSince(startedTime) * 1000)
+            ScreenTracker.instance?.trackEndedObserver(trackingMarker, Int(ms))
         }
     }
 
 }
+
+private final class PagingParentLifecycleNotifyViewController: UIViewController, UIScrollViewDelegate {
+
+    private var startedTime: Date!
+    private var currentPosition: Int!
+    fileprivate weak var scrollView: UIScrollView?
+
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        view.isHidden = true
+        view.isUserInteractionEnabled = false
+    }
+
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        resume()
+        trackStarted(currentPosition)
+    }
+
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        trackEnded(currentPosition)
+    }
+
+    private func trackStarted(_ index: Int) {
+        ScreenTracker.instance?.trackStartedObserver(getCurrentTab(index: index))
+    }
+
+    private func trackEnded(_ index: Int) {
+        let ms = round(Date().timeIntervalSince(startedTime) * 1000)
+        ScreenTracker.instance?.trackEndedObserver(getCurrentTab(index: index), Int(ms))
+    }
+
+    private func resume() {
+        resume(getCurrentIndex())
+    }
+
+    private func resume(_ index: Int) {
+        startedTime = Date()
+        currentPosition = index
+    }
+
+    private func getCurrentIndex() -> Int {
+        guard let scrollView = scrollView else {
+            fatalError("not set UIScrollView")
+        }
+        return Int(round(scrollView.contentOffset.x / scrollView.frame.width))
+    }
+
+    private func getCurrentTab(index: Int) -> TrackingMarker {
+        let trackingTabs = parent!.childViewControllers.filter { $0 is TrackingMarker }.map { $0 as! TrackingMarker }
+        return trackingTabs[index]
+    }
+
+    fileprivate func tabChenged(index: Int) {
+        trackEnded(currentPosition)
+        resume(index)
+        trackStarted(index)
+    }
+
+}
+
