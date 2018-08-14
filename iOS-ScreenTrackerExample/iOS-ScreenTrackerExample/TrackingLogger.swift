@@ -9,14 +9,20 @@
 import Foundation
 import ScreenTracker
 
-struct TrackingLogger {
+class TrackingLogger {
 
-    static func track(_ trackingMarker: TrackingMarker) {
-        print("show >>> screenName: \(trackingMarker.screenName()), parameter: \(trackingMarker.screenParameter())")
+    static let shared = TrackingLogger()
+    private var pvCount = 0
+
+    func track(_ trackingMarker: TrackingMarker) {
+        pvCount = pvCount + 1
+        print(">================================================================")
+        print("screenName: \(trackingMarker.screenName())(pv:\(pvCount)), parameter: \(trackingMarker.screenParameter())")
     }
 
-    static func sendExposureEvent(_ trackingMarker: TrackingMarker, exposureTime: Int = 0) {
-        print("hide <<< screenName: \(trackingMarker.screenName()), parameter: \(trackingMarker.screenParameter()), exposureTime: \(exposureTime)")
+    func sendExposureEvent(_ trackingMarker: TrackingMarker, exposureTime: Int = 0) {
+        print("hidden exposureTime: \(exposureTime)ms")
+        print("<================================================================")
     }
 
 }

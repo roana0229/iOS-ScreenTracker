@@ -18,9 +18,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
         ScreenTracker.initialize(trackStarted: { trackingMarker in
-            TrackingLogger.track(trackingMarker)
+            TrackingLogger.shared.track(trackingMarker)
         }, trackEnded: { trackingMarker, exposureTime in
-            TrackingLogger.sendExposureEvent(trackingMarker, exposureTime: exposureTime)
+            TrackingLogger.shared.sendExposureEvent(trackingMarker, exposureTime: exposureTime)
         })
         return true
     }
