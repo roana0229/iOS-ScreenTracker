@@ -79,6 +79,8 @@ class DetailViewController: UIViewController, TrackingMarker {
 
 [Look at the sample code](https://github.com/roana0229/iOS-ScreenTracker/blob/master/iOS-ScreenTrackerExample/iOS-ScreenTrackerExample/DetailViewController.swift#L12)
 
+If you are tracking everything, you should write `TrackingMarker` in `BaseViewController`.
+
 
 ##### Track PagingViewController(`UIViewController in UIScrollView`)
 
@@ -163,8 +165,6 @@ class PagingChildViewController: UIViewController, PagingChildTrackingMarker {
 
 [Look at the sample code](https://github.com/roana0229/iOS-ScreenTracker/blob/master/iOS-ScreenTrackerExample/iOS-ScreenTrackerExample/PagingChildViewController.swift#L12)
 
-
-If you are tracking everything, you should write `TrackingMarker` in `BaseViewController`.
 
 ## Sample Tracking Logger Utility
 
