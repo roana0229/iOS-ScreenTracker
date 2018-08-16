@@ -117,6 +117,25 @@ class ViewController: UIViewController, PagingParentTrackingMarker {
 
 [Look at the sample code](https://github.com/roana0229/iOS-ScreenTracker/blob/master/iOS-ScreenTrackerExample/iOS-ScreenTrackerExample/ViewController.swift#L12)
 
+call `notifyTabChangedForTracking(index:)`
+
+```.swift
+extension ViewController: UIScrollViewDelegate {
+
+    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        let newPosition = Int(round(scrollView.contentOffset.x / scrollView.bounds.width))
+        if currentPosition != newPosition {
+            currentPosition = newPosition
+            notifyTabChangedForTracking(index: newPosition)
+        }
+    }
+
+}
+```
+
+[Look at the sample code](https://github.com/roana0229/iOS-ScreenTracker/blob/master/iOS-ScreenTrackerExample/iOS-ScreenTrackerExample/ViewController.swift#L111)
+
+
 ```.swift
 import UIKit
 import ScreenTracker
