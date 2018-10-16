@@ -58,16 +58,16 @@ extension UIViewController {
     }
 
     @objc fileprivate func hookViewDidLoad() {
-        func addChild(_ viewController: UIViewController) {
-            addChildViewController(viewController)
+        func addChildViewController(_ viewController: UIViewController) {
+            addChild(viewController)
             view.insertSubview(viewController.view, at: 0)
-            viewController.didMove(toParentViewController: self)
+            viewController.didMove(toParent: self)
         }
 
         if self is PagingParentTrackingMarker {
-            addChild(PagingParentLifecycleNotifyViewController())
+            addChildViewController(PagingParentLifecycleNotifyViewController())
         } else if self is TrackingMarker && !(self is PagingChildTrackingMarker) {
-            addChild(LifecycleNotifyViewController())
+            addChildViewController(LifecycleNotifyViewController())
         }
 
         hookViewDidLoad() // call original ViewController.viewDidLoad()
@@ -90,7 +90,7 @@ extension UIViewController {
             return nil
         }
 
-        for child in vc.childViewControllers {
+        for child in vc.children {
             if let v = child as? PagingParentLifecycleNotifyViewController {
                 return v
             }
@@ -178,7 +178,7 @@ private final class PagingParentLifecycleNotifyViewController: UIViewController,
     }
 
     private func getCurrentTab(index: Int) -> TrackingMarker {
-        let trackingTabs = parent!.childViewControllers.filter { $0 is TrackingMarker }.map { $0 as! TrackingMarker }
+        let trackingTabs = parent!.children.filter { $0 is TrackingMarker }.map { $0 as! TrackingMarker }
         return trackingTabs[index]
     }
 
