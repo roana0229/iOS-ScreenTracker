@@ -15,7 +15,7 @@
 		D276E4F120CFB35100E26FD8 /* TrackingLogger.swift in Sources */ = {isa = PBXBuildFile; fileRef = D276E4EE20CFB35100E26FD8 /* TrackingLogger.swift */; };
 		D276E4F220CFB35100E26FD8 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D276E4EF20CFB35100E26FD8 /* DetailViewController.swift */; };
 		D276E4F320CFB35100E26FD8 /* Logger.swift in Sources */ = {isa = PBXBuildFile; fileRef = D276E4F020CFB35100E26FD8 /* Logger.swift */; };
-		D2AFBA082122CF5D0054BA12 /* ScreenTracker.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D276E51620CFB86300E26FD8 /* ScreenTracker.framework */; };
+		D27C89342175DE5700175909 /* ScreenTracker.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D276E51620CFB86300E26FD8 /* ScreenTracker.framework */; };
 		D2BC5B13210722EF008A026B /* PagingChildViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2BC5B12210722EF008A026B /* PagingChildViewController.swift */; };
 		D2BC5B15210722FC008A026B /* PagingChildViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D2BC5B14210722FC008A026B /* PagingChildViewController.storyboard */; };
 /* End PBXBuildFile section */
@@ -42,7 +42,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D2AFBA082122CF5D0054BA12 /* ScreenTracker.framework in Frameworks */,
+				D27C89342175DE5700175909 /* ScreenTracker.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -126,6 +126,7 @@
 				TargetAttributes = {
 					D276E4C420CFB14500E26FD8 = {
 						CreatedOnToolsVersion = 9.3;
+						LastSwiftMigration = 1000;
 					};
 				};
 			};
@@ -175,7 +176,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "/usr/local/bin/carthage copy-frameworks";
+			shellScript = "/usr/local/bin/carthage copy-frameworks\n";
 		};
 /* End PBXShellScriptBuildPhase section */
 
@@ -347,7 +348,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "org.roana0229.app.iOS-ScreenTracker.iOS-ScreenTrackerExample";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -370,7 +371,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "org.roana0229.app.iOS-ScreenTracker.iOS-ScreenTrackerExample";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;

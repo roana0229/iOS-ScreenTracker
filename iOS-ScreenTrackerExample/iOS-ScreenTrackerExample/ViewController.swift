@@ -35,24 +35,24 @@ class ViewController: UIViewController, PagingParentTrackingMarker {
         vc1.view.frame = page1Container.bounds
         vc1.view.backgroundColor = UIColor.init(red: 255, green: 0, blue: 0, alpha: 0.2)
         page1Container.addSubview(vc1.view)
-        addChildViewController(vc1)
-        vc1.didMove(toParentViewController: self)
+        addChild(vc1)
+        vc1.didMove(toParent: self)
 
         let vc2 = UIStoryboard(name: "PagingChildViewController", bundle: nil).instantiateInitialViewController() as! PagingChildViewController
         vc2.pageIndex = 2
         vc2.view.frame = page2Container.bounds
         vc2.view.backgroundColor = UIColor.init(red: 0, green: 255, blue: 0, alpha: 0.2)
         page2Container.addSubview(vc2.view)
-        addChildViewController(vc2)
-        vc2.didMove(toParentViewController: self)
+        addChild(vc2)
+        vc2.didMove(toParent: self)
 
         let vc3 = UIStoryboard(name: "PagingChildViewController", bundle: nil).instantiateInitialViewController() as! PagingChildViewController
         vc3.pageIndex = 3
         vc3.view.frame = page3Container.bounds
         vc3.view.backgroundColor = UIColor.init(red: 0, green: 0, blue: 255, alpha: 0.2)
         page3Container.addSubview(vc3.view)
-        addChildViewController(vc3)
-        vc3.didMove(toParentViewController: self)
+        addChild(vc3)
+        vc3.didMove(toParent: self)
 
         Logger.log()
     }
