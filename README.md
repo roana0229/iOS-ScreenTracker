@@ -10,6 +10,8 @@ If you use for Android, see [Android-ScreenTracker](https://github.com/roana0229
 
 #### 1. Import this library
 
+Xcode10, Swift4.2
+
 ```
 github "roana0229/iOS-ScreenTracker" >= 1.0
 ```
