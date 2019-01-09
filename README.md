@@ -8,7 +8,7 @@ If you use for Android, see [Android-ScreenTracker](https://github.com/roana0229
 
 ## Usage
 
-#### 1. Import this library
+#### 1. Import this library by Carthage
 
 Xcode10, Swift4.2
 
