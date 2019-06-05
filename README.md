@@ -10,10 +10,10 @@ If you use for Android, see [Android-ScreenTracker](https://github.com/roana0229
 
 #### 1. Import this library by Carthage
 
-Xcode10, Swift4.2
+Xcode10.2, Swift5.x
 
 ```
-github "roana0229/iOS-ScreenTracker" >= 1.0
+github "roana0229/iOS-ScreenTracker" >= 2.0
 ```
 
 [Look at the sample code](https://github.com/roana0229/iOS-ScreenTracker/blob/master/iOS-ScreenTrackerExample/Cartfile)
